@@ -13,7 +13,7 @@ This library is supported in all the browser where redux is supported. No extra 
 
 3) It can be used in React/ Angular2 or in any other application where redux is used.
 
-**[Live Demo](https://bala94.github.io/)**  (Note: This demo link renders Redux Dev-tool chart just to show the store variables. This dev tool is not rendering in IE. I repeat, the issue is only with Demo application's Dev-tool, not with redux-breakpoint) 
+**[Live Demo](https://bala94.github.io/)**  (Note: This demo link renders Redux Dev-tool chart just to show the store variables. This dev tool is not rendering in IE. The issue is only with Demo application's Dev-tool, not with redux-breakpoint) 
 
 
 ## Installation
