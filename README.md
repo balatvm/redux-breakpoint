@@ -4,13 +4,16 @@ This is a helper library to make your redux based application more responsive.
 
  You may need _redux-breakpoint_ library for the following cases:
 
+## Browser Support
+This library is supported in all the browser where redux is supported. No extra dependencies are added.
+
 1) When you have to write different rendering logic for different device width breakpoint. (Reminder! JS and CSS media-query are not mutual friends). 
 
 2) If you are writing or using any component level responsive library to detect width change/ breakpoint change, then you're against the core principle of Redux - **Single source of truth** .  Device width change / breakpoint change is global for your application, So it must be in redux store.
 
 3) It can be used in React/ Angular2 or in any other application where redux is used.
 
-**[Live Demo](https://bala94.github.io/)**
+**[Live Demo](https://bala94.github.io/)**  (Note: This demo link renders Redux Dev-tool chart just to show the store variables. This dev tool is not rendering in IE. I repeat, the issue is only with Demo application's Dev-tool, not with redux-breakpoint) 
 
 
 ## Installation
@@ -55,17 +58,20 @@ ReactDOM.render(
   As soon as you created the store object, call syncBreakPointWithStore function by passing your store object as written in the above code.
 
   The second parameter config is an optional parameter. Use it only if you want to change the default debounce settings.
-  By default, debounce is True and debounceTime is 100ms. 
+  By default, debounce is **_True_** and debounceTime is _**100ms**_. 
+
   ex:  
   ```
    syncBreakPointWithStore(store, {
           debounceTime: 200
        })
   ```
+
+```
    syncBreakPointWithStore(store, {
           debounce: false
        })
-  
+```  
 
 ### breakpointReducer
   This is similar to routerReducer from react-redux-router. Wherever you combine your other reducers, just add this along. 
@@ -102,14 +108,14 @@ mapStateToProps(state){
     breakpoint: state.breakpoint
   }
 }
-
 )
+export default connect(mapStateToProps,null)(ExampleComponent);
 ```
 
-That's all it takes. It's just one example. When your application grows, you might need more Components/Container to be aware of breakpoints. So it does makes sense to keep the Breakpoint in Store and the calculation logic in reducer. Then your component is free from the extra burden!!.
+That's all it takes. It's just one example. When your application grows, you might need more Components/Container to be aware of breakpoints. So it does make sense to keep the breakpoint in store and the calculation logic in reducer.
 
 ## Available breakpoints
-   isExtraSmall, isSmall, isMedium, isLarge, isExtraLarge. (The breakpoint calculation is same as bootstrap's [breakpoint](https://v4-alpha.getbootstrap.com/layout/overview/).
+   _isExtraSmall, isSmall, isMedium, isLarge, isExtraLarge_. (The breakpoint calculation is same as bootstrap's [breakpoint](https://v4-alpha.getbootstrap.com/layout/overview/).
 
    Apart from these store breakpoint variables,  _width_  and _height_ also available. So if you want your custom breakpoint logic, you can use these. 
 
@@ -117,10 +123,12 @@ That's all it takes. It's just one example. When your application grows, you mig
 ## Features
 1. It uses [Debounce](https://medium.com/@_jh3y/throttling-and-debouncing-in-javascript-b01cad5c8edf) logic to avoid unwanted dispatches, in turn it'll avoid unwanted re-rendering.
 
-2. This library is not only for breakpoint, it also can be used as window resize trigger. If any of your components/container has to use resize listener for xxx reason, it's very easy to subscribe to store rather than adding 'resize' listener to window and writing debounce or throttle logic again.  If you don't want your component to be re-rendered, you can use componentShouldUpdate() react lifecycle method. 
+2. This library is not only for breakpoint, it also can be used as window resize trigger. If any of your components/container has to use resize listener for xxx reason, it's very easy to subscribe to store rather than adding 'resize' listener to window and writing debounce or throttle logic again.  If you don't want your component to be re-rendered, you can make componentShouldUpdate() to return false in react lifecycle method. 
 
 ## Next Steps
 
 1. Accepting custom breakpoint in the config parameter.
 2. Options for listening only to Width change or Only height change. (If needed)
 3. Explore on ES7 decorator.  The plan is, just adding @Breakpoint decorator to any component should make the component to be connected to store and the breakpoint to be mapped to the component props. 
+
+
