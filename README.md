@@ -24,7 +24,7 @@ This library is supported in all the browser where redux is supported. No extra 
 
 > Theoritically, Every pixel is a breakpoint. 
 
-4) It can be used in React/ Angular2 or in any other application where redux is used.
+It can be used in React/ Angular2 or in any other application where redux is used.
 
 **[Live Demo](https://bala94.github.io/)**  (Note: This demo application uses Redux chart to visualize the store. IE doesn't support the demo. PS: redux-breakpoint is fully supported in IE) 
 
@@ -101,7 +101,7 @@ ReactDOM.render(
 
 
 ### Example usage
-  We'll take one Real use case. Let's say we want to use [DateRangePicker](https://github.com/airbnb/react-dates) component from airbnb's react-dates library.
+  We'll take one real use case. Let's say we want to use [DateRangePicker](https://github.com/airbnb/react-dates) component from airbnb's react-dates library.
   It has a property called orientation. And the value can be either "horizontal" or "vertical". To make this component responsive, I have to pass the property value as "vertical" For xs breakpoint (Mobile potrait), for other breakpoints I want to pass it as "horizontal". It's obvious that CSS media-query can't help in this case. **redux-breakpoint** is there to help us.  **Let's go..**
   
 
@@ -157,6 +157,7 @@ That's all it takes. It's just one example. When your application grows, you mig
    Store is dispatched for width or height change, so that you have the full flexiblity to have your own logic based on the width and even height.
    
    "Why store is dispatched for every width/height change instead of only breakpoint change ?" - You may ask. 
+
    Answer - If we dispatch only for breakpoint change (Small to Medium), we're taking away the flexibility of having our own breakpoint. We consider that every pixel is a breakpoint. That's why we named our action type as 'BREAKPOINT_CHANGE' instead of 'SIZE_CHANGE'.
 
 
@@ -166,10 +167,6 @@ That's all it takes. It's just one example. When your application grows, you mig
 
 2. This library is not only for breakpoint, it also can be used as window resize trigger. If any of your components/container has to use resize listener for xxx reason, it's very easy to subscribe to store rather than adding 'resize' listener to window and writing debounce or throttle logic again.  
 
-## Next Steps
 
-1. Accepting custom breakpoint in the config parameter.
-
-2. @Breakpoint decorator to  subscribe to store breakpoint.
 
 
