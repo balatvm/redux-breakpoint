@@ -2,10 +2,16 @@
 
 This is a helper library to make your redux based application more responsive. 
 
- You may need _redux-breakpoint_ library for the following cases:
-
-## Browser Support
+### Browser Support
 This library is supported in all the browser where redux is supported. No extra dependencies are added.
+
+
+## Intro
+
+   _redux-breakpoint_  library is useful for the following cases:
+
+
+
 
 1) When you have to write different rendering logic for different device width breakpoint. (Reminder! JS and CSS media-query are not mutual friends). 
 
@@ -27,7 +33,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-import syncHistoryWithStore, {breakpointReducer} from 'redux-breakpoint'
+import syncBreakpointWithStore, {breakpointReducer} from 'redux-breakpoint'
 
 import reducers from '<file-path>/reducers'
 
