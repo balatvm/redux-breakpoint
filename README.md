@@ -135,7 +135,7 @@ mapStateToProps(state){
 export default connect(mapStateToProps,null)(ExampleComponent);
 ```
 
-If you want to have your own breakpoint, use breakpoint.width.
+If you want to have your own breakpoint, use _breakpoint.width_ .
 
 ```js
 
