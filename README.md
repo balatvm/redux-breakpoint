@@ -1,3 +1,5 @@
+## redux-breakpoin
+
 > Make your component aware of breakpoint and device width just by connecting to store.
 
 This is a helper library to make your redux based application more responsive. 
@@ -18,7 +20,11 @@ This library is supported in all the browser where redux is supported. No extra 
 
 2) If you are writing or using any component level responsive library to detect width change/ breakpoint change, then you're against the core principle of Redux - **Single source of truth** .  Device width change / breakpoint change is global for your application, So it must be in redux store.
 
-3) It can be used in React/ Angular2 or in any other application where redux is used.
+3) This library uses breakpoint definition of bootstrap 4. It doesn't mean that, store will get dispatched only for those breakpoint change. Store gets dispatched for every resize of the device (Performance is taken care with debouncing). So you have full flexibility to have your own unlimited breakpoint definition by using the width from store.
+
+> Theoritically, Every pixel is a breakpoint. 
+
+4) It can be used in React/ Angular2 or in any other application where redux is used.
 
 **[Live Demo](https://bala94.github.io/)**  (Note: This demo application uses Redux chart to visualize the store. IE doesn't support the demo. PS: redux-breakpoint is fully supported in IE) 
 
@@ -117,6 +123,16 @@ mapStateToProps(state){
 }
 )
 export default connect(mapStateToProps,null)(ExampleComponent);
+```
+
+If you want to have your own breakpoint, use breakpoint.width.
+
+```js
+
+ if(breakpoint.width < 400){
+         orientation = "vertical";
+      } 
+
 ```
 
 That's all it takes. It's just one example. When your application grows, you might need more Components/Container to be aware of breakpoints. So it does make sense to keep the breakpoint in store and the calculation logic in reducer.
