@@ -1,4 +1,4 @@
-## redux-breakpoin
+## redux-breakpoint
 
 > Make your component aware of breakpoint and device width just by connecting to store.
 
@@ -35,7 +35,7 @@ This library is supported in all the browser where redux is supported. No extra 
 
 ## How to use
 
-redux-breakpoint has just two functions. syncBreakpointWithStore and breakpointReducer
+redux-breakpoint has just two functions, syncBreakpointWithStore and breakpointReducer.
 
 ```js
 import React from 'react'
@@ -76,17 +76,25 @@ ReactDOM.render(
   By default, debounce is **_True_** and debounceTime is _**100ms**_. 
 
   ex:  
-  ```
+  (Below changes are Not recommended). (The default values are perfect, change it only if it's really required).
+
+  To change debounce time:
+
+  ```js
    syncBreakPointWithStore(store, {
           debounceTime: 200
        })
   ```
+  
+  To disable debouncing:
 
-```
+```js
    syncBreakPointWithStore(store, {
           debounce: false
        })
 ```  
+
+
 
 ### breakpointReducer
   This is similar to routerReducer from react-redux-router. Wherever you combine your other reducers, just add this along. 
@@ -148,8 +156,8 @@ That's all it takes. It's just one example. When your application grows, you mig
 
    Store is dispatched for width or height change, so that you have the full flexiblity to have your own logic based on the width and even height.
    
-   "Why store is dispatched for every width/height change instead of only breakpoint change ? " You may ask. 
-   Answer - If we dispatch only for breakpoint change (Small to Medium), we're taking away the flexibility of having our own breakpoint. Theoritically, every pixel is a breakpoint. That's why we named our action type as 'BREAKPOINT_CHANGE' instead of 'SIZE_CHANGE'.
+   "Why store is dispatched for every width/height change instead of only breakpoint change ?" - You may ask. 
+   Answer - If we dispatch only for breakpoint change (Small to Medium), we're taking away the flexibility of having our own breakpoint. We consider that every pixel is a breakpoint. That's why we named our action type as 'BREAKPOINT_CHANGE' instead of 'SIZE_CHANGE'.
 
 
 
