@@ -6,6 +6,7 @@ This is a helper library to make your redux based application more responsive.
 This library is supported in all the browser where redux is supported. No extra dependencies are added.
 
 
+
 ## Intro
 
    _redux-breakpoint_  library is useful for the following cases:
@@ -19,7 +20,7 @@ This library is supported in all the browser where redux is supported. No extra 
 
 3) It can be used in React/ Angular2 or in any other application where redux is used.
 
-**[Live Demo](https://bala94.github.io/)**  (Note: This demo link renders Redux Dev-tool chart just to show the store variables. This dev tool is not rendering in IE. The issue is only with Demo application's Dev-tool, not with redux-breakpoint) 
+**[Live Demo](https://bala94.github.io/)**  (Note: This demo application uses Redux chart to visualize the store. IE doesn't support the demo. PS: redux-breakpoint is fully supported in IE) 
 
 
 ## Installation
@@ -120,21 +121,29 @@ export default connect(mapStateToProps,null)(ExampleComponent);
 
 That's all it takes. It's just one example. When your application grows, you might need more Components/Container to be aware of breakpoints. So it does make sense to keep the breakpoint in store and the calculation logic in reducer.
 
+ 
+
 ## Available breakpoints
    _isExtraSmall, isSmall, isMedium, isLarge, isExtraLarge_. (The breakpoint calculation is same as bootstrap's [breakpoint](https://v4-alpha.getbootstrap.com/layout/overview/).
 
    Apart from these store breakpoint variables,  _width_  and _height_ also available. So if you want your custom breakpoint logic, you can use these. 
 
+   Store is dispatched for width or height change, so that you have the full flexiblity to have your own logic based on the width and even height.
+   
+   "Why store is dispatched for every width/height change instead of only breakpoint change ? " You may ask. 
+   Answer - If we dispatch only for breakpoint change (Small to Medium), we're taking away the flexibility of having our own breakpoint. Theoritically, every pixel is a breakpoint. That's why we named our action type as 'BREAKPOINT_CHANGE' instead of 'SIZE_CHANGE'.
+
+
 
 ## Features
 1. It uses [Debounce](https://medium.com/@_jh3y/throttling-and-debouncing-in-javascript-b01cad5c8edf) logic to avoid unwanted dispatches, in turn it'll avoid unwanted re-rendering.
 
-2. This library is not only for breakpoint, it also can be used as window resize trigger. If any of your components/container has to use resize listener for xxx reason, it's very easy to subscribe to store rather than adding 'resize' listener to window and writing debounce or throttle logic again.  If you don't want your component to be re-rendered, you can make componentShouldUpdate() to return false in react lifecycle method. 
+2. This library is not only for breakpoint, it also can be used as window resize trigger. If any of your components/container has to use resize listener for xxx reason, it's very easy to subscribe to store rather than adding 'resize' listener to window and writing debounce or throttle logic again.  
 
 ## Next Steps
 
 1. Accepting custom breakpoint in the config parameter.
-2. Options for listening only to Width change or Only height change. (If needed)
-3. Explore on ES7 decorator.  The plan is, just adding @Breakpoint decorator to any component should make the component to be connected to store and the breakpoint to be mapped to the component props. 
+
+2. @Breakpoint decorator to  subscribe to store breakpoint.
 
 
