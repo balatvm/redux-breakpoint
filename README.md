@@ -2,7 +2,7 @@
 
 > Make your component aware of breakpoint and device width just by connecting to store.
 
-This is a helper library to make your redux based application more responsive. 
+This is a lightweight helper library to make your redux based application more responsive. 
 
 ### Browser Support
 This library is supported in all the browser where redux is supported. No extra dependencies are added.
@@ -16,7 +16,7 @@ This library is supported in all the browser where redux is supported. No extra 
 
 
 
-1) When you have to write different rendering logic for different device width breakpoint. (Reminder! JS and CSS media-query are not mutual friends). 
+1) When you have to write different rendering logic in your components for different device width/breakpoint, this library will be handy. (You need this library because JS and CSS media-query are not mutual). 
 
 2) If you are writing or using any component level responsive library to detect width change/ breakpoint change, then you're against the core principle of Redux - **Single source of truth** .  Device width change / breakpoint change is global for your application, So it must be in redux store.
 
@@ -34,6 +34,8 @@ This library is supported in all the browser where redux is supported. No extra 
 `npm install redux-breakpoint --save`
 
 ## How to use
+
+redux-breakpoint has just two functions. syncBreakpointWithStore and breakpointReducer
 
 ```js
 import React from 'react'
