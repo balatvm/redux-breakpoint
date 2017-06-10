@@ -2,7 +2,9 @@
 
 > Make your component aware of breakpoint and device width just by connecting to store.
 
-This is a lightweight helper library to make your redux based application more responsive. 
+This is a very lightweight  library to help your redux based application to be more responsive. 
+
+![Store State](https://github.com/bala94/bala94.github.io/blob/master/store.png)
 
 ### Browser Support
 This library is supported in all the browser where redux is supported. No extra dependencies are added.
