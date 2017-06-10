@@ -2,7 +2,7 @@
 
 > Make your component aware of breakpoint and device width just by connecting to store.
 
-This is a very lightweight  library to help your redux based application to be more responsive. 
+This is a  lightweight  library to help your redux based application to be more responsive. 
 
 ![Store State](https://github.com/bala94/bala94.github.io/blob/master/store.png)
 
@@ -13,22 +13,21 @@ This library is supported in all the browser where redux is supported. No extra 
 
 ## Intro
 
-   _redux-breakpoint_  library is useful for the following cases:
-
+   _redux-breakpoint_   library is useful for the following cases:
 
 
 
 1) When you have to write different rendering logic in your components for different device width/breakpoint, this library will be handy. (You need this library because JS and CSS media-query are not mutual). 
 
-2) If you are writing or using any component level responsive library to detect width change/ breakpoint change, then you're against the core principle of Redux - **Single source of truth** .  Device width change / breakpoint change is global for your application, So it must be in redux store.
+2) If you are writing or using any component level responsive library to detect width change/ breakpoint change, then you're against the core principle of Redux - **Single source of truth** .  Device width-change / breakpoint-change is global for your application, So it must be in redux store.
 
-3) This library uses breakpoint definition of bootstrap 4. It doesn't mean that, store will get dispatched only for those breakpoint change. Store gets dispatched for every resize of the device (Performance is taken care with debouncing). So you have full flexibility to have your own unlimited breakpoint definition by using the width from store.
+3) This library uses breakpoint definition of bootstrap4. It doesn't mean that, store will get dispatched only for those breakpoint change. Store gets dispatched for every resize of the device (Performance is taken care with debouncing). So you have full flexibility to have your own unlimited breakpoint definition by using the width from store.
 
 > Theoritically, Every pixel is a breakpoint. 
 
-It can be used in React/ Angular2 or in any other application where redux is used.
+Note: This library can be used in React, Angular2 or in any other application where redux is used.
 
-**[Live Demo](https://bala94.github.io/)**  (Note: This demo application uses Redux chart to visualize the store. IE doesn't support the demo. PS: redux-breakpoint is fully supported in IE) 
+**[Live Demo](https://bala94.github.io/)**  
 
 
 ## Installation
@@ -37,7 +36,7 @@ It can be used in React/ Angular2 or in any other application where redux is use
 
 ## How to use
 
-redux-breakpoint has just two functions, syncBreakpointWithStore and breakpointReducer.
+redux-breakpoint has just two functions:- syncBreakpointWithStore and breakpointReducer.
 
 ```js
 import React from 'react'

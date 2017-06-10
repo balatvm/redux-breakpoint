@@ -1,4 +1,4 @@
-var debounce = function(func, delay) {
+var debouncer = function(func, delay) {
   var inDebounce = undefined;
   return function() {
     var context = this,
@@ -10,4 +10,4 @@ var debounce = function(func, delay) {
   }
 }
 
-export default debounce;
+export default debouncer;

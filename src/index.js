@@ -1,5 +1,5 @@
 import breakpointReducer from './breakPointReducer';
-import debouncer from './debounce';
+import debouncer from './debouncer';
 
 //Initial values
 let storeRef = null;
@@ -7,15 +7,13 @@ let debounceDelay = 100;
 let debounce = true;
 
 
-
 //Default Resize listener
 function onResize() {
      storeRef.dispatch({
-       type: 'BREAKPOINT_CHANGE',
+       type: '@@BREAKPOINT_CHANGE',
        
      })
 }
-
 
 
 function syncBreakpointWithStore(store, config) {
