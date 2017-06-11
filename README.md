@@ -36,7 +36,7 @@ Note: This library can be used in React, Angular2 or in any other application wh
 
 ## How to use
 
-redux-breakpoint has just two functions:- syncBreakpointWithStore and breakpointReducer.
+redux-breakpoint has just two functions:- **_syncBreakpointWithStore_** and **_breakpointReducer_**.
 
 ```js
 import React from 'react'
@@ -74,7 +74,7 @@ ReactDOM.render(
   As soon as you created the store object, call syncBreakPointWithStore function by passing your store object as written in the above code.
 
   The second parameter config is an optional parameter. Use it only if you want to change the default debounce settings.
-  By default, debounce is **_True_** and debounceTime is _**100ms**_. 
+  By default, **_dispatchHeight_** is **_False_** debounce is **_True_** and debounceTime is _**100ms**_. 
 
   ex:  
   
