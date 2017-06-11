@@ -174,6 +174,6 @@ That's all it takes.  When your application grows, you might need more Component
 2. This library is not only for breakpoint, it also can be used as window resize trigger by enabling dispatchHeight. If any of your components/container has to use resize listener for xxx reason, it's very easy to subscribe to store rather than adding 'resize' listener to window and writing debounce or throttle logic again.  
 
 
-#Next steps
+## Next steps
 
 1. Adding support for server side rendering.

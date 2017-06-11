@@ -9,13 +9,12 @@
     "prepublish": "npm run clean && npm run build"
   },
   "keywords": [
-    "react",
     "redux",
+    "react",
+    "breakpoint",
     "responsive",
     "resize",
     "width",
-    "device",
-    "breakpoint",
     "debounce"
   ],
   "repository": {
