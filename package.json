@@ -1,6 +1,6 @@
 {
   "name": "redux-breakpoint",
-  "version": "2.0.7",
+  "version": "3.0.1",
   "description": "Breakpoint and device width manager for Redux based applications",
   "main": "lib/index.js",
   "scripts": {
@@ -36,7 +36,9 @@
   },
   "homepage": "https://github.com/bala94/redux-breakpoint#readme",
   "directories": {
-    "example": "example"
+    "src": "Library source code",
+    "demo": "Demo source code"
+    
   }
  
 }
