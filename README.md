@@ -7,7 +7,7 @@ This is a  lightweight  library to help your redux based application to be more 
 ![Store State](https://raw.githubusercontent.com/bala94/bala94.github.io/master/store.png)
 
 ### Browser Support
-This library is supported in all the browser where redux is supported. No extra dependencies are added.
+This library is supported in all  browsers where redux is supported. No extra dependencies are added.
 
 
 
@@ -17,11 +17,11 @@ This library is supported in all the browser where redux is supported. No extra 
 
 
 
-1) When you have to write different rendering logic in your components for different device width/breakpoint, this library will be handy. (You need this library because JS and CSS media-query are not mutual). 
+1) If you have to write different rendering logic in your components for different device-width or breakpoint, this library will be handy. (You need this library because JS and CSS media-query are not mutual). 
 
-2) If you are writing or using any component level responsive library to detect width change/ breakpoint change, then you're against the core principle of Redux - **Single source of truth** .  Device width-change / breakpoint-change is global for your application, So it must be in redux store.
+2) If you are writing or using any component level responsive library to detect width-change or breakpoint-change, then you're against the core principle of Redux - **Single source of truth** .  Device width-change / breakpoint-change is global for your application, So it must be in redux store.
 
-3) This library uses breakpoint definition of bootstrap4. It doesn't mean that, store will get dispatched only for those breakpoint change. Store gets dispatched for every resize of the device (Performance is taken care with debouncing). So you have full flexibility to have your own unlimited breakpoint definition by using the width from store.
+3) This library uses breakpoint definition of bootstrap4. It doesn't mean that, store will get dispatched only for those breakpoint change. Store gets dispatched for every width change (Performance is taken care with debouncing). So you have full flexibility to have your own unlimited breakpoint definition by using the width from store.
 
 > Theoritically, Every pixel is a breakpoint. 
 
@@ -77,7 +77,14 @@ ReactDOM.render(
   By default, debounce is **_True_** and debounceTime is _**100ms**_. 
 
   ex:  
-  (Below changes are Not recommended). (The default values are perfect, change it only if it's really required).
+  
+  To enable height change dispatch:
+
+  ```js
+   syncBreakPointWithStore(store, {
+          dispatchHeight: true
+       })
+  ```
 
   To change debounce time:
 
@@ -87,7 +94,7 @@ ReactDOM.render(
        })
   ```
   
-  To disable debouncing:
+  To disable debouncing: (Not recommended)
 
 ```js
    syncBreakPointWithStore(store, {
@@ -146,18 +153,16 @@ If you want to have your own breakpoint, use _breakpoint.width_ .
 
 ```
 
-That's all it takes. It's just one example. When your application grows, you might need more Components/Container to be aware of breakpoints. So it does make sense to keep the breakpoint in store and the calculation logic in reducer.
+That's all it takes.  When your application grows, you might need more Components/Container to be aware of breakpoints. So it is better to keep the breakpoint/width data in store and the breakpoint calculation logic in reducer.
 
  
 
-## Available breakpoints
-   _isExtraSmall, isSmall, isMedium, isLarge, isExtraLarge_. (The breakpoint calculation is same as bootstrap's [breakpoint](https://v4-alpha.getbootstrap.com/layout/overview/).
+## Available variables
+   _width, isExtraSmall, isSmall, isMedium, isLarge, isExtraLarge_. (The breakpoint calculation is same as bootstrap's [breakpoint](https://v4-alpha.getbootstrap.com/layout/overview/).
 
-   Apart from these store breakpoint variables,  _width_  and _height_ also available. So if you want your custom breakpoint logic, you can use these. 
-
-   Store is dispatched for width or height change, so that you have the full flexiblity to have your own logic based on the width and even height.
+   Since, store is dispatched for every width change, you have the full flexiblity to have your own breakpoint logic based on the width.
    
-   "Why store is dispatched for every width/height change instead of only breakpoint change ?" - You may ask. 
+   "Why store is dispatched for every width change instead of only breakpoint change ?" - You may ask. 
 
    Answer - If we dispatch only for breakpoint change (Small to Medium), we're taking away the flexibility of having our own breakpoint. We consider that every pixel is a breakpoint. That's why we named our action type as 'BREAKPOINT_CHANGE' instead of 'SIZE_CHANGE'.
 
@@ -166,8 +171,9 @@ That's all it takes. It's just one example. When your application grows, you mig
 ## Features
 1. It uses [Debounce](https://medium.com/@_jh3y/throttling-and-debouncing-in-javascript-b01cad5c8edf) logic to avoid unwanted dispatches, in turn it'll avoid unwanted re-rendering.
 
-2. This library is not only for breakpoint, it also can be used as window resize trigger. If any of your components/container has to use resize listener for xxx reason, it's very easy to subscribe to store rather than adding 'resize' listener to window and writing debounce or throttle logic again.  
+2. This library is not only for breakpoint, it also can be used as window resize trigger by enabling dispatchHeight. If any of your components/container has to use resize listener for xxx reason, it's very easy to subscribe to store rather than adding 'resize' listener to window and writing debounce or throttle logic again.  
 
 
+#Next steps
 
-
+1. Adding support for server side rendering.

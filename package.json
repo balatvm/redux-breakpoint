@@ -1,6 +1,6 @@
 {
   "name": "redux-breakpoint",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "Breakpoint and device width manager for Redux based applications",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,8 @@
     "redux",
     "responsive",
     "resize",
-    "angular",
+    "width",
+    "device",
     "breakpoint",
     "debounce"
   ],
@@ -37,8 +38,6 @@
   "homepage": "https://github.com/bala94/redux-breakpoint#readme",
   "directories": {
     "example": "example"
-  },
-  "dependencies": {
-    "babel-plugin-transform-object-assign": "^6.22.0"
   }
+ 
 }

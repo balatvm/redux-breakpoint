@@ -6,8 +6,7 @@ export default function getBreakPoints(){
        isMedium = false,
        isLarge = false,
        isExtraLarge = false,
-       width = window.innerWidth,
-       height = window.innerHeight;
+       width = window.innerWidth;
     
     if(width < constants.XS_UPPER){
         isExtraSmall = true;
@@ -28,7 +27,6 @@ export default function getBreakPoints(){
    
    return {
        width,
-       height,
        isExtraSmall,
        isSmall,
        isMedium,
