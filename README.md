@@ -27,7 +27,7 @@ This library is supported in all  browsers where redux is supported. No extra de
 
 Note: This library can be used in React, Angular2 or in any other application where redux is used.
 
-**[Live Demo](https://bala94.github.io/)**  
+**[Live Demo](https://redux-breakpoint.surge.sh/)**  
 
 
 ## Installation

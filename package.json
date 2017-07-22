@@ -1,7 +1,7 @@
 {
   "name": "redux-breakpoint",
-  "version": "3.0.1",
-  "description": "Breakpoint and device width manager for Redux based applications",
+  "version": "3.0.2",
+  "description": "Device width resize dispatcher to manage breakpoints for redux based application.",
   "main": "lib/index.js",
   "scripts": {
     "build": "babel --presets=react,es2015 --plugins=transform-object-assign src --out-dir lib",
@@ -27,8 +27,6 @@
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "react": "^15.5.4",
     "rimraf": "^2.6.1"
   },
   "bugs": {
